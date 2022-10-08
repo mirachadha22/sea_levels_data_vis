@@ -1,0 +1,322 @@
+/* General formatting */
+body {
+  font-size: 20px;
+  font-family: Arial;
+  background-color: #0c0c0c;
+  color: white;
+	margin: 0px;
+}
+
+/* style for links */
+a:link {
+  color: white;
+}
+
+/* style for visited links */
+a:visited {
+  color: #C5C7C5;
+}
+
+/* style for headings */
+h1, h2, h3 {
+	line-height: 1.2
+}
+
+/* style for h1 within the storyboard */
+.storyboard-h1 {
+  text-align: center;
+  font-size: 100px;
+	color: #0c0c0c;
+	margin-top: -120px;
+}
+
+/* style for h2 within the storyboard */
+.storyboard-h2 {
+  font-size: 50px;
+	font-weight: normal;
+}
+
+/* style for h3 within the storyboard */
+.storyboard-h3 {
+  font-size: 50px;
+	margin: 0 0 5px 0;
+	font-weight: normal;
+	font-family: Arial;
+}
+
+/* style for the title page of the website */
+.title-card {
+	height: 100vh;
+  width: 100vw;
+	background-image: url('img/ocean_backdrop.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* style for each section of the storyboard */
+.storyboard-section {
+  height: 100vh;
+  width: 75%;
+	padding: 10px 0;
+	margin: auto;
+}
+
+/* style for centered sections of the storyboard */
+.centered-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	flex-direction: column;
+	height: 100%;
+}
+
+/* style for text sections that need to be centered but
+are not within a centered div */
+.centered-text {
+	text-align: center;
+}
+
+/* style for each vis + caption section of the
+precipitation and flooding stories */
+.vis-section {
+	display: flex;
+}
+
+/* style for any text blurb */
+.text-section {
+	width: 750px;
+	line-height: 1.6;
+}
+
+/* style for text captions for 
+flooding and precipitation stories */
+.vis-text {
+	line-height: 1.4;
+}
+
+/* style for div to hold buttons 
+next to each other */
+.button-holder {
+	margin: auto;
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* style for buttons */
+button {
+	border-radius: 35px;
+	padding: 10px 15px;
+	border: none;
+	color: #161616;
+	background: white;
+}
+
+/* style for big buttons */
+.big-button {
+	padding: 20px 50px;
+	border-radius: 45px;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+/* style for choice between stories
+button */
+.question-button {
+	width: 300px;
+	height: 80px;
+}
+
+/* style for big button with inverse
+coloring to other buttons */
+.inverse-button {
+	color: white;
+	background: #161616;
+	margin-top: 0px;
+}
+
+/* generic style for buttons that move 
+through storyboard */
+.flow-button {
+	font-size: 18px;
+	margin-top: -80px;
+	float: right;
+}
+
+/* style for button to view alternate storyline */
+.view-button {
+	margin-right: 130px;
+}
+
+/* style for continue button */
+.continue-button {
+	margin-right: 10px;
+}
+
+/* style for back buttons */
+.back-button {
+	float: left;
+}
+
+/* generic style for svg canvases */
+svg {
+	background-color: #f4f1f0;
+	color: black;
+}
+
+/* style for flooding and 
+precipitation visualizations */
+.story-svg {
+	height: 590px;
+	width: 550px;
+	margin-top: -60px;
+}
+
+/* style for future visualization at end of 
+storyboard */
+.future-svg {
+	height: 550px;
+	width: 700px;
+	margin-top: -50px;
+}
+
+/* style for caption that accompanies 
+flooding or precipitation visuals */
+.vis-caption {
+  width: 50%;
+  height: 100%;
+	padding: 0 15px;
+	margin-top: -60px;
+}
+
+/* style for visualizations that are
+embedded as videos */
+.vis-vid {
+	width: 970px;
+}
+
+/* style for class of elements that should be hidden */
+.hidden {
+	display: none;
+}
+
+/* alternate style specifications for narrower windows */
+@media (max-width: 750px) {
+	body {
+		font-size: 17px;
+	}
+
+	.text-section {
+		width: 100%;
+	}
+	.vis-vid {
+		width: 100%;
+	}
+	.question-button {
+		padding: 10px 20px;
+		width: auto;
+		height: auto;
+		margin: 5px;
+	}
+	.vis-section {
+		flex-direction: column;
+		max-width: 100vw;
+	}
+	.vis-caption {
+		margin-top: 5px;
+		font-size: 15px;
+		width: 95%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	.vis-text {
+		margin: auto;
+		margin-bottom: none;
+	}
+	.storyboard-h3 {
+		font-size: 18px;
+	}
+	.svg-2 {
+		height: 340px;
+		width: auto;
+	}
+	.svg-3 {
+		height: auto;
+		width: 450px;
+	}
+}
+
+/* the rest of the style specifications were provided with the assignment */
+.content-column {
+	max-width: 650px;
+	margin: 40px auto;
+}
+
+.text-holder {
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+
+@media (orientation: landscape) {
+	.vis-selection {
+		flex-direction: column;
+	}
+}
+
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
+#forkongithub a{
+	background:#00F;
+	color:#fff;
+	text-decoration:none;
+	font-family:arial,sans-serif;
+	text-align:center;
+	font-weight:bold;
+	padding:5px 40px;
+	font-size:1rem;
+	line-height:1.4rem;
+	position:relative;
+	transition:0.5s;
+}
+#forkongithub a:hover{
+	background:#118;
+	color:#fff;
+}
+#forkongithub a::before,#forkongithub a::after{
+	content:"";
+	width:100%;
+	display:block;
+	position:absolute;
+	top:1px;
+	left:0;
+	height:1px;
+	background:#fff;
+}
+#forkongithub a::after{
+	bottom:1px;
+	top:auto;
+}
+@media screen and (min-width:1000px){
+	#forkongithub{
+		position:absolute;
+		display:block;
+		top:0;
+		right:0;
+		width:200px;
+		overflow:hidden;
+		height:200px;
+		z-index:9999;
+	}
+	#forkongithub a{
+		width:200px;
+		position:absolute;
+		top:60px;
+		right:-60px;
+		transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+	}
+}

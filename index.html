@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!-- Metadata -->
+
+<head>
+  <meta charset='utf-8'>
+
+  <!-- Title -->
+  <title>G01: Rising Sea Levels, DS 4200 S22</title>
+
+  <!-- CSS Styling -->
+  <link rel='stylesheet' href='style.css'>
+
+  <!-- Favicons -->
+  <link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
+  <link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
+  <link rel='manifest' href='favicons/site.webmanifest'>
+  <link rel='shortcut icon' href='favicons/favicon.ico'>
+  <meta name='msapplication-TileColor' content='#da532c'>
+  <meta name='msapplication-config' content='favicons/browserconfig.xml'>
+  <meta name='theme-color' content='#ffffff'>
+</head>
+
+<!-- Main page content -->
+
+<body>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id='forkongithub'><a href='https://github.com/NEU-DS-4200-S22-Students/project-g01-risingsealevels'>Fork me on GitHub</a></span>
+
+  <!-- Storyboard goes here -->
+  <div>
+    <div class='title-card'>
+      <div class='centered-section'>
+        <h1 class='storyboard-h1'>RISING SEA LEVELS</h1>
+        <button class='big-button inverse-button' onClick="document.getElementById('intro-section-1').scrollIntoView();">Begin</button>
+      </div>
+    </div>
+    <div class='storyboard-section' id='intro-section-1'>
+      <div class='centered-section'>
+          <p class='text-section'>
+            Ocean levels are rising at unprecedented rates. 
+            Due to byproducts of climate change like greenhouse gases, 
+            melting glaciers, and thermal expansion, experts worry that rising sea levels will 
+            <strong >"wreak havoc on coastal cities across the world."<sup>1</sup></strong>
+          </p>
+      </div>
+      <button class='flow-button' onclick="document.getElementById('intro-section-2').scrollIntoView();">Next</button>
+    </div>
+    <div class='storyboard-section' id='intro-section-2'>
+      <div class='centered-section'>
+          <p class="text-section">
+            As a coastal city, Boston experiences the consequences of changes in sea level. Though the city already
+            experiences regular flooding, Boston is predicted to face up to <strong>1.5 feet of sea-level rise
+            by 2050.<sup>3</sup></strong> 
+            <br/>
+            <br/>
+            Situated on the water, Boston's Seaport district is at risk of serious damage to buildings and roads 
+            as a result of future flooding. The following data visualizations outline how changes in sea level
+            will impact flooding in Seaport.
+          </p>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('intro-section-1').scrollIntoView();">Back</button>
+      <button class='flow-button' onclick="document.getElementById('seaport-vis-1').scrollIntoView();">Next</button>
+    </div>
+  <div class='storyboard-section' id='seaport-vis-1'>
+    <div class='centered-section'>
+      <video controls width='100%' class='vis-vid'>
+        <source src='files/seaport_properties_flooding.mp4' type='video/mp4'>
+        <p>Your browser doesn't support HTML5 video, sorry!</p>
+      </video>
+    </div>
+    <button class='flow-button back-button' onclick="document.getElementById('intro-section-2').scrollIntoView();">Back</button>
+    <button class='flow-button' onclick="document.getElementById('seaport-vis-2').scrollIntoView();">Next</button>
+  </div>
+  <div class='storyboard-section' id='seaport-vis-2'>
+    <div class='centered-section'>
+      <video controls width='100%' class='vis-vid'>
+        <source src='files/seaport_roads_flooding.mp4' type='video/mp4'>
+        <p>Your browser doesn't support HTML5 video, sorry!</p>
+      </video>
+    </div>
+    <button class='flow-button back-button' onclick="document.getElementById('seaport-vis-1').scrollIntoView();">Back</button>
+    <button class='flow-button' onclick="document.getElementById('transition-text').scrollIntoView();">Next</button>
+  </div>
+  <div class='storyboard-section' id='transition-text'>
+    <div class='centered-section'>
+        <p class="text-section">
+          Changes in sea level can affect many aspects of a city's ecosystem. Two
+          common side effects of sea-level rise that may impact the Seaport neighborhood
+          are increased <strong>flooding</strong> and <strong>heavy precipitation.</strong>
+          <br/>
+          <br/>
+          Below are visualizations that outline the past, present and future of these
+          climate patterns in Boston.
+        </p>
+    </div>
+    <button class='flow-button back-button' onclick="document.getElementById('seaport-vis-2').scrollIntoView();">Back</button>
+    <button class='flow-button' onclick="document.getElementById('choice-section').scrollIntoView();">Next</button>
+  </div>
+    <div class='storyboard-section' id='choice-section'>
+      <div class='centered-section'>
+        <div>
+          <h2 class='storyboard-h2'>Which trend would you like to explore?</h2>
+          <div class='button-holder'>
+            <button class='big-button question-button' onClick="switchStory(false)">Flooding</button>
+            <button class='big-button question-button' onClick="switchStory(true)">Precipitation</button>
+          </div>
+        </div>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('transition-text').scrollIntoView();">Back</button>
+    </div>
+    <div class='hidden' id="prec-text">
+      <div class='centered-section'>
+        <p class='text-section'>
+          Since the 1950s, heavy precipitation has become more common around the world. 
+          This trend will continue as the planet continues to warm, because warmer air can hold more water vapor.
+          In the United States, the Midwest and Northeast have experienced the largest increase in 
+          frequency of heavy precipitation events. <sup>5</sup>
+          <br/>
+          <br/>
+          The most immediate threat of heavy precipitation is flooding. 
+          In urban areas such as Boston, floods have the ability to devastate roads and infrastructure, 
+          harm human health, and overwhelm sewer systems. 
+        </p>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('choice-section').scrollIntoView();">Back</button>
+      <button class='flow-button' onclick="showPrecipitation()">Next</button>
+    </div>
+    <div class='hidden' id='prec-content'>
+      <div class="centered-section">
+      <div class='vis-section'>
+          <svg id='vis-svg-4' preserveAspectRatio='xMidYMid meet' class='story-svg' viewBox='0 0 1100 1260' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+          </svg>
+        <div class='vis-caption'>
+          <div id='prec-slide-1' >
+            <h3 class='storyboard-h3' >1966-1996</h3>
+            <p class='vis-text'>
+              The primary indicators for changes to precipitation rates are
+              extreme weather events such as prolonged droughts and flash flooding. <sup>5</sup> 
+              These precursors are likely the cause for a rise in heavy precipitation events
+              between 1987 and 1996, after remaining stready throughout the mid-1960s 
+              to the mid-1980s.
+            </p>
+          </div>
+          <div id='prec-slide-2' class='hidden'>
+            <h3 class='storyboard-h3'>1997-2016</h3>
+            <p class='vis-text'>
+              From 1997 to 2006, the average inches of precipitation per year increased even more dramatically 
+              than in the previous decade; then plateaued from 2007 to 2016. As a result, cities in the 
+              Northeast have experienced
+              “heavy rain and snow resulting in about 1 to 2 inches of water a day depending on location 
+              since 1996.” <sup>6</sup>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <button class='flow-button back-button' id='back' onclick='goBack()'>Back</button>
+      <button class='flow-button' id='next' onclick='updateChart()'>Next</button>
+      <button class='hidden' id='view-flooding' onclick='switchStory(false)'>View Flooding</button>
+      <button class='hidden' id='continue' onclick='moveOn()'>Continue</button>
+    </div>
+    <div class='storyboard-section' id="flooding-text">
+      <div class='centered-section'>
+          <p class='text-section'>
+            Floods are among the most common natural disasters in the United States. They can cause
+            loss of human life, destruction of property and an increase in waterborne diseases. As 
+            global warming continues to exacerbate rises in sea level, it “detectably influences” 
+            many variables that cause flooding, according to the Intergovernmental Panel on Climate Change. 
+            <sup>1</sup>
+            <br/>
+            <br/>
+            Boston has historically surpassed national averages in annual flooding. Studies show this 
+            trend is likely to continue.
+          </p>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('choice-section').scrollIntoView();">Back</button>
+      <button class='flow-button' onclick="showFlooding()">Next</button>
+    </div>
+    <div class='storyboard-section' id='flooding-content'>
+      <div class="centered-section">
+      <div class='vis-section'>
+          <svg id='vis-svg-3' preserveAspectRatio='xMidYMid meet' class='story-svg' viewBox='0 0 1100 1260' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+          </svg>
+        <div class='vis-caption'>
+          <div id='flood-slide-1' >
+            <h3 class='storyboard-h3'>1920-1990</h3>
+            <p class='vis-text'>
+              Early data shows Boston's location on the water may have boosted its susceptibility to flooding.
+              <br/>
+              <br/>
+              From 1920 to 1990, the number of high-tide flood days, days on which tides inundated
+              low-lying areas, increased steadily across the nation.
+              But Boston consistently recorded more high-tide flood days per decade than the national average. 
+            </p>
+          </div>
+          <div id='flood-slide-2' class='hidden'>
+            <h3 class='storyboard-h3'>1990-2010</h3>
+            <p class="vis-text">
+              In just two decades between 1990 and 2010, the number of high-tide flood days skyrocketed
+              throughout the United States. But again, Boston faced an especially drastic spike in high-tide flooding.
+              The number of flood days in Boston tripled from 1990 to 2010, while the national average doubled.
+            <br/>
+            <br/>
+              Much of Boston’s infrastructure is not prepared to face continuous increases in annual flood days, 
+              as it is one the United States' oldest cities. 
+              Dated drainage systems are common in Boston and are not equipped to handle 
+              repeated floods.<sup>3</sup>
+            </p>
+          </div>
+          <div id='flood-slide-3' class='hidden'>
+            <h3 class='storyboard-h3'>2000-2050</h3>
+            <p class="vis-text">
+              By 2050, Boston is predicted to experience 70 high-tide flood days per year. That is
+              more than four times as many high-tide flood days as there were from 2010-2019.
+              <br/>
+              <br/>
+              Such a drastic rise in flooding “endangers crucial infrastructure in Boston, including waste and 
+              stormwater systems, MBTA lines, and roads.” <sup>4</sup>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button class='flow-button back-button' id='back-flood' onclick='goBack()'>Back</button>
+      <button class='flow-button' id='next-flood' onclick='updateChart()'>Next</button>
+      <button class='hidden' id='view-prec' onclick='switchStory(true)'>View Precipitation</button>
+      <button class='hidden' id='continue-flood' onclick='moveOn()'>Continue</button>
+    </div>
+    <div class='storyboard-section' id='future-transition'>
+      <div class='centered-section'>
+          <p class="text-section">
+            Flooding and heavy precipitation events caused by rising sea levels have plagued the Boston area.
+            Predictions show these extreme weather events will only worsen in years to come.
+          </p>
+      </div>
+      <button class='flow-button back-button' onclick="backToStory()">Back</button>
+      <button class='flow-button' onclick="document.getElementById('future-section').scrollIntoView();">Next</button>
+    </div>
+    <div class='storyboard-section' id='future-section'>
+      <div class='centered-section'>
+        <div class="centered-text">
+          <h2 class='storyboard-h2'>What do you think the future will look like?</h2>
+          <button onclick='showFuture()' class="big-button">Let's see</button>
+        </div>
+      </div>
+    </div>
+    <div class='storyboard-section' id="future-chart">
+      <div class='centered-section'>
+          <svg id='vis-svg-5' preserveAspectRatio='xMidYMid meet' class='future-svg' viewBox='0 0 1400 1100' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+          </svg>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('future-transition').scrollIntoView();">Back</button>
+      <button class='flow-button' onclick="document.getElementById('future-text').scrollIntoView();">Next</button>
+    </div>
+    <div class='storyboard-section' id="future-text">
+      <div class='centered-section'>
+        <p class='text-section'>
+          The previous visualization shows the National Oceanic and Atmospheric Administration, NOAA's,
+          estimates for future sea-level rise in Boston. Even by intermediate 
+          estimates, sea levels in Boston will rise by over a foot by 2050. High estimates are even more severe 
+          and both projections only 
+          worsen with time. Both high and intermediate estimates are far above the city code for development, which defines
+          what degree of potential flood risk is safe for infrastructure development.
+          <br/>
+          <br/>
+          Boston endures worse high-tide flooding than most cities in the United States.<sup>3</sup> By NOAA's estimates,
+          large portions of Boston, including Seaport, will be swallowed up by the sea in the coming century. 
+          <br/>
+          <br/>
+          We hope that this project will increase the Boston community's awareness of the problem, as well as
+          motivate further research on the effect of rising sea levels in Boston.
+        </p>
+      </div>
+      <button class='flow-button back-button' onclick="document.getElementById('future-chart').scrollIntoView();">Back</button>
+    </div>
+  </div>
+
+  <!-- Further writeup -->
+  <div class='content-column'>
+
+    <h1>Project G01: Rising Sea Levels, DS 4200 S22</h1>
+
+    <p><strong>Mira Chadha</strong>, <strong>Michelle Lo</strong>, <strong>Annetta Stogniew</strong></p>
+
+    <p>Service-Learning Course Project as part of
+      <a href='https://neu-ds-4200-s22.github.io/'>Ds 4200 S22 Information Presentation & Visualization</a>,
+      taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>,
+      <a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>,
+      <a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.
+    </p>
+
+
+    <h1>Abstract</h1>
+    <p>
+      Our visual encodings show trends in flooding, heavy precipitation and sea level rise in Seaport, 
+      Boston and the Northeast United States. The visualizations were created to be shown in Boston Globe 
+      journalist David Abel’s documentary “Inundation Project,” about rising sea levels in Seaport. 
+      <br/>
+      <br/>
+      Because our visual encodings will ultimately appear in a documentary, we got special permission from 
+      the professor to use Adobe Illustrator and Adobe After Effects to create our visualizations. The 
+      professor also allowed us to focus more on storytelling in our website, rather than the interactivity 
+      required in the project description.
+      <br/>
+      <br/>
+      The first two visualizations, embedded as videos, will appear as-is in Abel’s documentary. The remaining 
+      visualizations mimic those we created for Abel. We recreated the visualizations Abel will use in D3 to 
+      adapt to the website display. For instance, the D3 encodings each use different colors because they 
+      represent different datasets. For Abel’s documentary, all visualizations use the same color scheme and use 
+      the context from the documentary to advise viewers on the encoding’s content.
+      <br/>
+      <br/>
+      The motivating question for Abel’s documentary, and in turn our project, is how rising sea levels will impact 
+      the Seaport community in the coming century. Using past data and projections from NOAA and the First Street 
+      Foundation, our visualizations show how the Seaport neighborhood specifically and the broader geographic areas 
+      to which Seaport belongs will be impacted by sea level rise and its side effects.
+    </p>
+
+    <h1>Demo Video</h1>
+
+    <p>This is a screen recording demo of Rising Sea Levels in D3 slide:</p>
+
+    <video controls width='100%'>
+      <source src='files/rising_sea-Level.mp4' type='video/mp4'>
+      <p>Your browser doesn't support HTML5 video. Here is
+        a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link to the video</a> instead.</p>
+    </video>
+    
+    
+    <h1>Presentation Slides</h1>
+
+    <p><a href="files/ds4200_presentation.pdf">Here</a> is the slide deck for our in-class presentation about our project.</p>
+
+    <h1>Acknowledgments</h1>
+
+    <p>
+      List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.
+    </p>
+
+    <ul>
+      <li><a href='https://d3js.org/'>
+          D3: Data-Driven Documents</a>
+        by Mike Bostock is used for manipulating the DOM to create visualizations.
+      </li>
+      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+          Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+        by Chris Heilmann is used to create the banner that links back to the source code repository.
+      </li>
+      <li><a href="https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61">
+          Create a D3 line chart animation</a>
+        by Louise Moxy is used to create the animations on the line charts.
+      </li>
+      <li>HD Wallpaper
+        by Michael Schaueer is used for the background of the first screen on this website.
+        The original link from where we got the image now leads to a 403 error but here it is:
+        https://www.hdwallpapers.in/ocean_waves_aerial_view-wallpapers.html
+      </li>
+    </ul>
+    <p>The following sources were used as research for the text portions of this website.</p>
+    <ol>
+      <li><a href="https://thehill.com/changing-america/sustainability/climate-change/559868-un-report-says-coastal-cities-subject-to">
+        UN report says coastal cities subject to disaster with rising sea levels</a>
+      by Alexandra Kelley
+      </li>
+      <li><a href="https://www.ipcc.ch/sr15/chapter/chapter-3/">
+        Impacts of 1.5ºC global warming on natural and human systems</a>
+      by Marco Bindi
+      </li>
+      <li><a href="https://www.bostonglobe.com/2022/02/16/science/heres-what-rising-sea-levels-mean-boston/#:~:text=By%202100%2C%20under%20a%20worst,the%20end%20of%20the%20century">
+        Here’s what rising sea levels mean for Boston</a>
+      by Dharna Noor
+      </li>
+      <li><a href="https://www.wbur.org/news/2021/07/14/high-tide-flooding-boston">
+        NOAA Predicts Up To 18 Days of High Tide Flooding In Boston Next Year</a>
+      by Barbara Moran
+      </li>
+      <li><a href="https://www.ipcc.ch/site/assets/uploads/2018/03/SREX-Chap3_FINAL-1.pdf">
+        Changes in Climate Extremes and their Impacts on the Natural Physical Environment</a>
+      by David Easterling 
+      </li>
+      <li><a href="https://www.sciencedirect.com/science/article/pii/S221209472100044X">
+        Changes in Climate Extremes and their Impacts on the Natural Physical Environment</a>
+      by Huanping Huang
+      </li>
+    </ol>
+  </div>
+
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src='lib/d3.v7.3.0/d3.js'></script>
+  <script src='js/story_visualizations.js'></script>
+  <script src='js/sea_level_visualization.js'></script>
+</body>
+
+</html>
